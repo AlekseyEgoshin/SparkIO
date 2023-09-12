@@ -8,6 +8,7 @@ object Main extends App with Utils {
 
   val argumentsMap = ArgsParser(args)(app).toMap
 
+  println(argumentsMap)
   val program = new Program(argumentsMap)(app)
   program.run()
 }

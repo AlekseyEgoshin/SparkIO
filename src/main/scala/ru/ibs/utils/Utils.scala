@@ -4,6 +4,10 @@ import ru.ibs.workflow.Application
 
 import scala.collection.mutable
 
+/**
+ * В трейте содержатся методы, которые используются как вспомогательные инструменты в одном или
+ * более классах
+ */
 trait Utils extends Constants {
   def ArgsParser(argumentList: Array[String])(app: Application): mutable.Map[String, String] = {
     val outputMap: mutable.Map[String, String] = mutable.Map[String, String]()
@@ -13,7 +17,7 @@ trait Utils extends Constants {
         case Array(x, y) => (x.toLowerCase, y)
       }
 
-//      app.logger.info(s"Parameter '$parameterName' has been received")
+      app.logger.info(s"Parameter '$parameterName' has been received")
 
       outputMap.put(parameterName, parameterValue)
     })

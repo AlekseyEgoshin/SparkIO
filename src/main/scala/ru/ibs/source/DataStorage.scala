@@ -12,6 +12,7 @@ class DataStorage(sourceType: String, json: JValue)(implicit app: Application) {
   println(s"Upload type $sourceType")
   val storage: DataStorageTrait = sourceType.toLowerCase match {
     case "jdbc" => json.extract[Jdbc]
+//    case "kafka" => json.extract[Kafka]
     case "file" => json.extract[File]
     case "hadoop" => json.extract[Hadoop]
     case _ =>
@@ -19,11 +20,9 @@ class DataStorage(sourceType: String, json: JValue)(implicit app: Application) {
         "Source argument does not have upload type. Please, check it.")
   }
 
-  def read(implicit app: Application, appManager: ApplicationManager): DataFrame = {
+  def read(implicit app: Application, appManager: ApplicationManager): DataFrame =
     storage.read()
-  }
 
-  def write(df: DataFrame)(implicit app: Application, appManager: ApplicationManager): Unit = {
+  def write(df: DataFrame)(implicit app: Application, appManager: ApplicationManager): Unit =
     storage.write(df)
-  }
 }

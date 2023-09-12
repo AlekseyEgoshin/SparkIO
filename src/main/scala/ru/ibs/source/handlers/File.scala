@@ -5,21 +5,30 @@ import ru.ibs.meta.ApplicationManager
 import ru.ibs.source.DataStorageTrait
 import ru.ibs.workflow.Application
 
-case class File(uploadType: String, path: String, filetype: String)(implicit
-    app: Application,
-    appManager: ApplicationManager)
+case class File(
+                 uploadType: String,
+                 path: String,
+                 filetype: String,
+                 delimiter: Option[String] = Option(";"),
+                 format: Option[String]
+               )
     extends DataStorageTrait {
 
-  private val fileStorage =
+  private val config: Map[String, String] =
+    Map[String, String]()
+
+  override def read()(implicit app: Application, appManager: ApplicationManager): DataFrame =
     if (path.contains(":"))
       path.split(":").head match {
-        case "hdfs" => "hdfs"
-        case "s3" => "s3"
-        case _ => "local"
+        case "hdfs" =>
+          app.spark.read.options(config).option("header", "true").option("delimiter", delimiter.get).csv(path)
+        case "s3" =>
+          app.spark.emptyDataFrame
+        case _ =>
+          app.spark.read.options(config).option("header", "true").option("delimiter", ";").csv(path)
       }
-    else "local"
+    else app.spark.emptyDataFrame
 
-  override def read(): DataFrame = super.read()
-
-  override def write(df: DataFrame): Unit = ???
+  override def write(df: DataFrame)(implicit app: Application, appManager: ApplicationManager): Unit =
+    df.write.option("header", "true").csv(path)
 }
