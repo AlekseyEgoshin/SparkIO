@@ -3,7 +3,7 @@ package ru.ibs.source
 import org.apache.spark.sql.DataFrame
 import org.json4s.{DefaultFormats, Formats, JValue}
 import ru.ibs.meta.ApplicationManager
-import ru.ibs.source.handlers.{File, Hadoop, Jdbc}
+import ru.ibs.source.handlers.{File, Hadoop, Jdbc, Kafka}
 import ru.ibs.workflow.Application
 
 class DataStorage(sourceType: String, json: JValue)(implicit app: Application) {
@@ -12,7 +12,7 @@ class DataStorage(sourceType: String, json: JValue)(implicit app: Application) {
   println(s"Upload type $sourceType")
   val storage: DataStorageTrait = sourceType.toLowerCase match {
     case "jdbc" => json.extract[Jdbc]
-//    case "kafka" => json.extract[Kafka]
+    case "kafka" => json.extract[Kafka]
     case "file" => json.extract[File]
     case "hadoop" => json.extract[Hadoop]
     case _ =>

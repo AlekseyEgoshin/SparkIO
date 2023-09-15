@@ -12,7 +12,7 @@ class ApplicationManager(arguments: Map[String, String])(implicit app: Applicati
       val sourceJson: JValue = JsonParser.parseFromString(params.getOrElse(conType, ""))
       val sourceType: String = (sourceJson \\ "uploadType").extract[String]
 
-      new DataStorage(sourceType, sourceJson)//(app)
+      new DataStorage(sourceType, sourceJson)
     } else throw new IllegalArgumentException(s"Input data does not have '$conType' block.")
   }
 
