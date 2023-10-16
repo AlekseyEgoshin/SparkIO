@@ -2,9 +2,9 @@ package ru.ibs.source.handlers
 
 import org.apache.spark.sql.streaming.Trigger
 import org.apache.spark.sql.{DataFrame, Dataset}
-import ru.ibs.meta.{ApplicationManager, KafkaMessage}
+import ru.ibs.meta.{Application, KafkaMessage}
 import ru.ibs.source.DataStorageTrait
-import ru.ibs.workflow.Application
+import ru.ibs.workflow.ApplicationManager
 
 import scala.language.postfixOps
 
@@ -47,7 +47,7 @@ case class Kafka(
       .as[KafkaMessage]
       .writeStream
       .trigger(Trigger.Once)
-      .foreachBatch { (batchData: Dataset[KafkaMessage], _) =>
+      .foreachBatch { (batchData: Dataset[KafkaMessage], _: Long) =>
         if (!batchData.isEmpty) dataset = dataset.union(batchData)
       }
       .start()

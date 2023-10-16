@@ -1,10 +1,10 @@
 package ru.ibs.methods
 
 import org.apache.spark.sql.DataFrame
-import ru.ibs.meta.ApplicationManager
-import ru.ibs.workflow.Application
+import ru.ibs.meta.Application
+import ru.ibs.workflow.ApplicationManager
 
-protected trait Transform {
+trait Transform {
   protected def transform(
       df: DataFrame)(implicit app: Application, appManager: ApplicationManager): DataFrame = df
 }

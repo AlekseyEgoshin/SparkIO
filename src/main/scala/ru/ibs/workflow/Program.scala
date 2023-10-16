@@ -1,7 +1,7 @@
 package ru.ibs.workflow
 
 import org.apache.spark.sql.DataFrame
-import ru.ibs.meta.ApplicationManager
+import ru.ibs.meta.Application
 import ru.ibs.methods.{Extract, Load, Transform}
 
 /**
@@ -25,7 +25,6 @@ class Program(argumentsMap: Map[String, String])(implicit app: Application)
     app.logger.info("CHECKPOINT: Extract process completed successfully")
 
     // transform
-    extractDf.show()
     app.logger.info("CHECKPOINT: Start transformation process")
     val transformedDf: DataFrame = transform(extractDf)
     app.logger.info("CHECKPOINT: Transformation process completed successfully")

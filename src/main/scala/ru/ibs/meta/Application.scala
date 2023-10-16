@@ -1,4 +1,4 @@
-package ru.ibs.workflow
+package ru.ibs.meta
 
 import org.apache.hadoop.fs.FileSystem
 import org.apache.log4j.Logger

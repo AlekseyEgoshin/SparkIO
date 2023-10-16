@@ -1,6 +1,6 @@
 package ru.ibs.utils
 
-import ru.ibs.workflow.Application
+import ru.ibs.meta.Application
 
 import scala.collection.mutable
 
