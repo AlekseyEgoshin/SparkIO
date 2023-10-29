@@ -1,9 +1,11 @@
 package ru.ibs.meta
 
+import java.sql.Timestamp
+
 case class KafkaMessage(
        key: String,
        value: String,
        topic: String,
-       offset: Long,
        partition: Int,
-       timestamp: Long)
+       offset: Long,
+       timestamp: Timestamp)

@@ -44,11 +44,15 @@ case class Kafka(
       .format("kafka")
       .options(getConfigForStreaming)
       .load()
+      .selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)", "topic" ,"partition" ,"offset" ,"timestamp")
       .as[KafkaMessage]
       .writeStream
       .trigger(Trigger.Once)
       .foreachBatch { (batchData: Dataset[KafkaMessage], _: Long) =>
-        if (!batchData.isEmpty) dataset = dataset.union(batchData)
+        if (!batchData.isEmpty) {
+          batchData.show()
+          dataset = dataset.union(batchData)
+        }
       }
       .start()
       .awaitTermination()
