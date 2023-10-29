@@ -1,8 +1,7 @@
 package ru.ibs
 
-import ru.ibs.meta.Application
 import ru.ibs.utils.Utils
-import ru.ibs.workflow.Program
+import ru.ibs.workflow.{Application, Program}
 
 object Main extends App with Utils {
   implicit val app: Application = new Application

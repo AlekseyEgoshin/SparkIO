@@ -2,9 +2,9 @@ package ru.ibs.source.handlers
 
 import org.apache.spark.sql.streaming.Trigger
 import org.apache.spark.sql.{DataFrame, Dataset}
-import ru.ibs.meta.{Application, KafkaMessage}
+import ru.ibs.meta.KafkaMessage
 import ru.ibs.source.DataStorageTrait
-import ru.ibs.workflow.ApplicationManager
+import ru.ibs.workflow.{Application, ApplicationManager}
 
 import scala.language.postfixOps
 

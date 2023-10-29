@@ -1,9 +1,8 @@
 package ru.ibs.source.handlers
 
 import org.apache.spark.sql.{DataFrame, SaveMode}
-import ru.ibs.meta.Application
 import ru.ibs.source.DataStorageTrait
-import ru.ibs.workflow.ApplicationManager
+import ru.ibs.workflow.{Application, ApplicationManager}
 
 final case class Jdbc(
     uploadType: String,

@@ -1,7 +1,6 @@
 package ru.ibs.workflow
 
 import org.json4s.{DefaultFormats, Formats, JValue}
-import ru.ibs.meta.Application
 import ru.ibs.source.DataStorage
 import ru.ibs.utils.JsonParser
 

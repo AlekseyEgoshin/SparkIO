@@ -1,7 +1,6 @@
 package ru.ibs.workflow
 
 import org.apache.spark.sql.DataFrame
-import ru.ibs.meta.Application
 import ru.ibs.methods.{Extract, Load, Transform}
 
 /**

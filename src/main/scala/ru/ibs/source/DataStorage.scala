@@ -2,9 +2,8 @@ package ru.ibs.source
 
 import org.apache.spark.sql.DataFrame
 import org.json4s.{DefaultFormats, Formats, JValue}
-import ru.ibs.meta.Application
 import ru.ibs.source.handlers.{File, Hadoop, Jdbc, Kafka}
-import ru.ibs.workflow.ApplicationManager
+import ru.ibs.workflow.{Application, ApplicationManager}
 
 class DataStorage(sourceType: String, json: JValue)(implicit app: Application) {
   implicit private val formats: Formats = DefaultFormats
