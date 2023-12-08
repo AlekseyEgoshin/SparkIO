@@ -1,8 +1,8 @@
-package ru.ibs.workflow
+package ru.egoshin.workflow
 
 import org.json4s.{DefaultFormats, Formats, JValue}
-import ru.ibs.source.DataStorage
-import ru.ibs.utils.JsonParser
+import ru.egoshin.source.DataStorage
+import ru.egoshin.utils.JsonParser
 
 class ApplicationManager(arguments: Map[String, String])(implicit app: Application) {
   def getConnector(params: Map[String, String], conType: String): DataStorage = {

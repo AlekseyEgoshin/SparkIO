@@ -1,4 +1,4 @@
-package ru.ibs.utils
+package ru.egoshin.utils
 
 import org.json4s.JValue
 import org.json4s.native.JsonMethods.parse

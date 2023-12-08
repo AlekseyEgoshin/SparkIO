@@ -138,7 +138,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ru.ibs.Main</mainClass>
+                            <mainClass>ru.egoshin.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

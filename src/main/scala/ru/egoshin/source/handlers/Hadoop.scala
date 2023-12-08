@@ -1,8 +1,8 @@
-package ru.ibs.source.handlers
+package ru.egoshin.source.handlers
 
 import org.apache.spark.sql.DataFrame
-import ru.ibs.source.DataStorageTrait
-import ru.ibs.workflow.{Application, ApplicationManager}
+import ru.egoshin.source.DataStorageTrait
+import ru.egoshin.workflow.{Application, ApplicationManager}
 
 final case class Hadoop(uploadType: String, schema: String, table: String, query: Option[String])
     extends DataStorageTrait {

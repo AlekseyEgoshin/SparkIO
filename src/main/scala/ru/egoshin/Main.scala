@@ -1,7 +1,7 @@
-package ru.ibs
+package ru.egoshin
 
-import ru.ibs.utils.Utils
-import ru.ibs.workflow.{Application, Program}
+import ru.egoshin.utils.Utils
+import ru.egoshin.workflow.{Application, Program}
 
 object Main extends App with Utils {
   implicit val app: Application = new Application

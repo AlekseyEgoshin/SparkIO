@@ -1,4 +1,4 @@
-package ru.ibs.meta
+package ru.egoshin.meta
 
 import java.sql.Timestamp
 

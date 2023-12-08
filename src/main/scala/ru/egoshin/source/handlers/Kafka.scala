@@ -1,10 +1,10 @@
-package ru.ibs.source.handlers
+package ru.egoshin.source.handlers
 
 import org.apache.spark.sql.streaming.Trigger
 import org.apache.spark.sql.{DataFrame, Dataset}
-import ru.ibs.meta.KafkaMessage
-import ru.ibs.source.DataStorageTrait
-import ru.ibs.workflow.{Application, ApplicationManager}
+import ru.egoshin.meta.KafkaMessage
+import ru.egoshin.source.DataStorageTrait
+import ru.egoshin.workflow.{Application, ApplicationManager}
 
 import scala.language.postfixOps
 

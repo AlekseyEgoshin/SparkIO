@@ -1,9 +1,9 @@
-package ru.ibs.source
+package ru.egoshin.source
 
 import org.apache.spark.sql.DataFrame
 import org.json4s.{DefaultFormats, Formats, JValue}
-import ru.ibs.source.handlers.{File, Hadoop, Jdbc, Kafka}
-import ru.ibs.workflow.{Application, ApplicationManager}
+import ru.egoshin.source.handlers.{File, Hadoop, Jdbc, Kafka}
+import ru.egoshin.workflow.{Application, ApplicationManager}
 
 class DataStorage(sourceType: String, json: JValue)(implicit app: Application) {
   implicit private val formats: Formats = DefaultFormats

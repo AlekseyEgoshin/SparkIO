@@ -1,7 +1,7 @@
-package ru.ibs.source
+package ru.egoshin.source
 
 import org.apache.spark.sql.DataFrame
-import ru.ibs.workflow.{Application, ApplicationManager}
+import ru.egoshin.workflow.{Application, ApplicationManager}
 
 trait DataStorageTrait {
   def read()(implicit app: Application, appManager: ApplicationManager): DataFrame

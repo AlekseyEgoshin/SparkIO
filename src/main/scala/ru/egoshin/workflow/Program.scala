@@ -1,7 +1,7 @@
-package ru.ibs.workflow
+package ru.egoshin.workflow
 
 import org.apache.spark.sql.DataFrame
-import ru.ibs.methods.{Extract, Load, Transform}
+import ru.egoshin.methods.{Extract, Load, Transform}
 
 /**
  * В классе описывается основная логика программы. Принимает на вход два параметра:

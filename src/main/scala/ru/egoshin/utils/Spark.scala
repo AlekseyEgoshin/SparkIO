@@ -1,4 +1,4 @@
-package ru.ibs.utils
+package ru.egoshin.utils
 
 import org.apache.spark.sql.SparkSession
 

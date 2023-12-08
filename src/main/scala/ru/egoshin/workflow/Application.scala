@@ -1,4 +1,4 @@
-package ru.ibs.workflow
+package ru.egoshin.workflow
 
 import org.apache.hadoop.fs.FileSystem
 import org.apache.log4j.Logger

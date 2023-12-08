@@ -1,6 +1,6 @@
-package ru.ibs.utils
+package ru.egoshin.utils
 
-import ru.ibs.workflow.Application
+import ru.egoshin.workflow.Application
 
 import scala.collection.mutable
 

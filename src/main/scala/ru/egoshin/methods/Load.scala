@@ -1,7 +1,7 @@
-package ru.ibs.methods
+package ru.egoshin.methods
 
 import org.apache.spark.sql.DataFrame
-import ru.ibs.workflow.{Application, ApplicationManager}
+import ru.egoshin.workflow.{Application, ApplicationManager}
 
 trait Load {
   protected def load(transformedData: DataFrame)(implicit
